@@ -54,8 +54,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     userLoggedIn = useProvider(userLoggedInProvider);
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
           appBar: AppBar(
             title: Text('TREADAA'),
             centerTitle: true,
@@ -66,15 +66,15 @@ class _MyAppState extends State<MyApp> {
                       ? HomePage()
                       : LoginPage()
                   : Text('Loading')
-              : Text('Loading')),
-      // ignore: empty_statements
-    );
+              : Text('Loading'),
+          // ignore: empty_statements
+        ));
   }
 
   getUserStatus() {
     handleAuth().then((val) {
       if (val.isSignedIn) {
-        userLoggedIn.setCurrentState(val.isSignedIn);
+        userLoggedIn.setUserCurrentState(val.isSignedIn);
         setState(() {
           checkAuthStatus = true;
         });

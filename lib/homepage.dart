@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(
         child: Container(
-          height: 30 / 0,
+          height: 30,
           width: 100.0,
           child: ElevatedButton(
             onPressed: () {
